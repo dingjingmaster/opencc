@@ -22,6 +22,8 @@ set (PACKAGE_NAME opencc)
 project (${PACKAGE_NAME} CXX)
 include (CTest)
 
+set(OPENCC_DATA_DIR /usr/local/andsec/lib/data)
+
 ######## Options
 option(BUILD_DOCUMENTATION "Use Doxygen to create the HTML based API documentation" OFF)
 option(BUILD_SHARED_LIBS "Build opencc as shared library" ON)
@@ -100,7 +102,11 @@ if (DEFINED LIB_INSTALL_DIR)
   set (DIR_LIBRARY ${LIB_INSTALL_DIR})
 endif (DEFINED LIB_INSTALL_DIR)
 
-set (DIR_SHARE_OPENCC ${DIR_SHARE}/opencc)
+if (DEFINED OPENCC_DATA_DIR)
+  set (DIR_SHARE_OPENCC ${OPENCC_DATA_DIR})
+else ()
+  set (DIR_SHARE_OPENCC ${DIR_SHARE}/opencc)
+endif (DEFINED OPENCC_DATA_DIR)
 set (DIR_SHARE_LOCALE ${DIR_SHARE}/locale)
 
 ######## Configuration
