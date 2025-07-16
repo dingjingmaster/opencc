@@ -37,7 +37,7 @@
     "Traditional Chinese"
   ],
   "devDependencies": {
-    "mocha": "^9.2.1",
+    "mocha": "^11.7.1",
     "node-pre-gyp-github": "^2.0.0"
   },
   "dependencies": {
